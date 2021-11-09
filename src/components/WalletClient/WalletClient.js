@@ -12,6 +12,7 @@ const WalletClient = () => {
   const wallet = useWallet();
   const address = useAddress();
   const balance = useBalance();
+
   return onboard ? (
     <div className="wallet-client">
       {!wallet.provider ? (

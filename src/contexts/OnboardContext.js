@@ -13,10 +13,10 @@ const OnboardContext = createContext();
 const OnboardProvider = ({ children }) => {
   const [onboard, setOnboard] = useState(null);
   const [address, setAddress] = useState(null);
-  const [ens, setEns] = useState(null);
   const [network, setNetwork] = useState(null);
   const [balance, setBalance] = useState(null);
   const [wallet, setWallet] = useState({});
+  const [ens, setEns] = useState(null);
 
   const linkWallet = useCallback(async () => {
     try {
@@ -33,6 +33,18 @@ const OnboardProvider = ({ children }) => {
     try {
       await onboard.walletReset();
       window.localStorage.removeItem("selectedWallet");
+    } catch (error) {
+      console.log(error);
+    }
+  }, [onboard]);
+
+  const retriveLocalStorage = useCallback(async () => {
+    try {
+      const previouslySelectedWallet =
+        window.localStorage.getItem("selectedWallet");
+      if (previouslySelectedWallet && onboard) {
+        await onboard.walletSelect(previouslySelectedWallet);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -58,16 +70,8 @@ const OnboardProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    const retriveLocalStorage = async () => {
-      const previouslySelectedWallet =
-        window.localStorage.getItem("selectedWallet");
-      console.log("retrive ls");
-      if (previouslySelectedWallet && onboard) {
-        await onboard.walletSelect(previouslySelectedWallet);
-      }
-    };
     retriveLocalStorage();
-  }, [onboard]);
+  }, [retriveLocalStorage]);
 
   return (
     <OnboardContext.Provider
@@ -107,6 +111,13 @@ export const useAddress = () => {
 export const useBalance = () => {
   const { balance } = useOnboardContext();
   return balance;
+};
+
+export const useBalanceEth = () => { //WIP
+  const { balance, wallet } = useOnboardContext();
+  const web3 = new Web3(wallet.provider);
+  const balanceEth = web3.utils.fromWei(`${balance}`, "ether")
+  return balanceEth;
 };
 
 export const useWallet = () => {
