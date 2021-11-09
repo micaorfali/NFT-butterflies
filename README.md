@@ -1,4 +1,57 @@
-# Getting Started with Create React App
+
+# WTD OnboardJs Context Boilerplate
+
+## To do...
+- Convert from wei to eth using web3.eth.utils
+- Add minting component
+- Add wallets icons
+- and more...
+
+## Needed configurartion (WIP)
+To be set on services/onboard/services.js
+- OnboardJS dappID
+- Network ID (1: Mainet, 4: Rinkeby, etc)
+
+## Using with any React App
+- Needed dependencies: **bnc-onboard** and **web3**
+- Wrapp your App component with OnboardProvider
+- Place WalletButton component wherever you need
+
+## Available hooks
+
+### useOnboardContext
+The whole context, useful to invoque linkWallet and resetWallet connection functions
+### useOnboard
+The Onboard instance
+
+### useGetState
+The actual onboard state
+
+### useAddress
+The connected wallet address
+
+### useBalance
+The wallet balance.
+
+### useBalanceEth (WIP)
+
+### useWallet
+The wallet instance, useful to get the provider and instance a new web3
+
+### useWalletProvider
+The wallet provider
+
+## Connect and disconnect methods
+
+### linkWallet
+Wallet connection process
+### resetWallet
+Wallet disconnection
+
+
+## Boring stuff
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
