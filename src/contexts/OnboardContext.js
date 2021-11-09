@@ -48,14 +48,12 @@ const OnboardProvider = ({ children }) => {
         if (wallet.provider) {
           setWallet(wallet);
           new Web3(wallet.provider);
-          console.log(`${wallet.name} connected!`);
           window.localStorage.setItem("selectedWallet", wallet.name);
         } else {
           setWallet({});
         }
       },
     });
-
     setOnboard(onboard);
   }, []);
 
@@ -109,11 +107,6 @@ export const useAddress = () => {
 export const useBalance = () => {
   const { balance } = useOnboardContext();
   return balance;
-};
-export const useBalanceEth = () => {
-  const { balance } = useOnboardContext();
-  const _balance = +balance > 0 ? +balance / 10 ** 18 : +balance;
-  return _balance;
 };
 
 export const useWallet = () => {

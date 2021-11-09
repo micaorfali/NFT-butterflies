@@ -1,12 +1,13 @@
 import React from "react";
 import WalletButton from "../components/WalletButton/WalletButton";
+import WalletClient from "../components/WalletClient/WalletClient";
 
 const Home = () => {
   return (
-    <div>
-      Home
+    <>
       <WalletButton />
-    </div>
+      <WalletClient />
+    </>
   );
 };
 
