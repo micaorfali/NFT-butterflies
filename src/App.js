@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { OnboardProvider } from "./contexts/OnboardContext";
+import OnboardProvider from "./contexts/OnboardContext";
 import Home from "./pages/Home";
 
 function App() {

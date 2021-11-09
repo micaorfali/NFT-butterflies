@@ -1,10 +1,20 @@
-import React, { useContext } from "react";
-import { OnboardContext } from "../../contexts/OnboardContext";
+import React from "react";
+import {
+  useOnboardContext,
+  useAddress,
+  useOnboard,
+  useWallet,
+  useBalance,
+} from "../../contexts/OnboardContext";
 import { truncateWeb3Address } from "../../services/onboard/helpers";
 
 const WalletButton = () => {
-  const { onboard, address, wallet, linkWallet, resetWallet } =
-    useContext(OnboardContext);
+
+  const { linkWallet, resetWallet } = useOnboardContext();
+  const onboard = useOnboard();
+  const wallet = useWallet();
+  const address = useAddress();
+  const balance = useBalance();
 
   return onboard ? (
     <div>
@@ -35,6 +45,7 @@ const WalletButton = () => {
               ) : (
                 <p>Please connect your {wallet.name} wallet to use the app.</p>
               )}
+              <p>{balance}</p>
             </div>
           </div>
           <div>
