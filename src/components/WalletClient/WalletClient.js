@@ -17,7 +17,7 @@ const WalletClient = () => {
     <div className="wallet-client">
       {!wallet.provider ? (
         <div>
-          <h4>Connect to Wallet</h4>
+          <h4>Connect to Wallet!</h4>
           <p>Please connect your preferred wallet to use the app.</p>
         </div>
       ) : (

@@ -16,8 +16,15 @@ export function initOnboard(subscriptions) {
       explanation: "",
       wallets: [
         {
+          walletName: "detectedwallet",
+          display: {
+            desktop: false,
+            mobile: false,
+          },
+        },
+        {
           walletName: "metamask",
-        }
+        },
       ],
     },
     walletCheck: [
