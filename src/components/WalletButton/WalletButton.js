@@ -6,6 +6,7 @@ import {
   useWallet,
 } from "../../contexts/OnboardContext";
 import { truncateWeb3Address } from "../../services/onboard/helpers";
+import styles from './WalletButton.module.css'
 
 const WalletButton = () => {
   const { linkWallet, resetWallet } = useOnboardContext();
@@ -14,7 +15,7 @@ const WalletButton = () => {
   const address = useAddress();
 
   return (
-    <button
+    <button className={styles.WalletButtonstyle}
       onClick={
         !wallet.provider ? linkWallet : address ? resetWallet : linkWallet
       }

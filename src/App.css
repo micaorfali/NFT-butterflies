@@ -19,15 +19,7 @@
   height: 200px;
 }
 
-.App button {
-  background-color: black;
-  border-radius: 60px;
-  border:0;
-  color:white;
-  padding: 10px 30px;
-}
-.App button:hover {
-  background-color: gray;
-  cursor: pointer;
-  
+
+header{
+  background-color: black!important;
 }

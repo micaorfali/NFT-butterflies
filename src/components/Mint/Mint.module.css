@@ -1,0 +1,10 @@
+.CTA{
+    background-color: #C51B20;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 0.5em;
+    border-radius: 10px;
+    border-color: transparent;
+  }
