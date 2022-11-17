@@ -9,7 +9,7 @@ const Hero = () => {
         <div className={styles.herotext}>
           <h1>Butterfly World</h1>
           <p>Welcome to the amazing world that combines nature and Artificial Intelligence</p>
-          <button className={styles.CTA}>Mint now</button>
+          <a className={styles.CTA} href='#mintNow'>Mint now</a>
         </div>
       </div>
     </div>

@@ -92,7 +92,7 @@ const Mint = () => {
     } catch (error) {}
   };
   return (
-    <div className='wallet-client'>
+    <div className='wallet-client' id='mintNow'>
       <p>Balance {userBalance} eth</p>
       <button className={styles.CTA} disabled={!address ? true : false} onClick={handleMint}>
         Mint

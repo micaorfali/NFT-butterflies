@@ -1,0 +1,16 @@
+.footerContainer{
+    height: 20vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.copyright{
+    align-items: baseline;
+    font-size: 0.8em;
+    color: white;
+    opacity: 0.5;
+    margin-bottom: 2em;
+}

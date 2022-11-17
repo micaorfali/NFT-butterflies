@@ -23,3 +23,7 @@
 header{
   background-color: black!important;
 }
+
+html{
+  scroll-behavior: smooth;
+}
